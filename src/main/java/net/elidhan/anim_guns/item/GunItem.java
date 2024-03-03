@@ -2,6 +2,7 @@ package net.elidhan.anim_guns.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import java.security.SecureRandom;
 import net.elidhan.anim_guns.AnimatedGuns;
 import net.elidhan.anim_guns.AnimatedGunsClient;
 import net.elidhan.anim_guns.entity.projectile.BulletProjectileEntity;
@@ -101,7 +102,7 @@ implements FabricItem, IAnimatable, ISyncable
         super(settings.maxDamage((magSize*10)+1));
         GeckoLibNetwork.registerSyncable(this);
 
-        this.random = new Random();
+        this.random = new SecureRandom();
         this.gunID = gunID;
         this.animationID = animationID;
         this.gunDamage = gunDamage;
